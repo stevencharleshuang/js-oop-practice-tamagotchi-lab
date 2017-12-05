@@ -10,10 +10,10 @@ For those who don't remember (or choose to forget), tamagotchis were "digital pe
 # Tamagotchi Version 1.0
 
 Make a ```tamagotchi``` object. Give it the following properties:  
-1. a hungry property (initially false)  
-2. a sick property (initially false)  
-3. an age of 0  
-4. a rest level (initally set to 5)
+1. a `hungry` property (initially false)  
+2. a `sick` property (initially false)  
+3. an `age` of 0  
+4. a `rest level` (initally set to 5)
 
 Give it the following methods:</br>
 
