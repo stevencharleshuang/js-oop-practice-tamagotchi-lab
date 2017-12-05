@@ -5,7 +5,6 @@ For those who don't remember (or choose to forget), tamagotchis were "digital pe
 
 ## Before you start!!
 
-- Open up `tamagotchi-test.html` in your browser. Yikes!! Lots of red. You'll work on getting those tests passing.
 - Open up `src/tamagotchi.js`. This is where you'll be doing your work.
 
 # Tamagotchi Version 1.0
@@ -31,7 +30,6 @@ Use your custom tamagotchi object... to create each of these
 - cat
 - fish
 
-**There will be LOTS of repeated code!!!  We know!!!**
 
 ### dog should be the same as tamagotchi except it should also have these abilities:
 1. ```bark()``` - returns "ruff ruff  
@@ -64,9 +62,3 @@ Bonus:  What is missing from our tamagotchis?!?!  Build it!
 - Identify which parts of your tamagotchis share the SAME attributes
 - Identify which parts of your tamagotchis share the SAME abilities
 - Identify the differences
-
----
-
-### Now, let's use the Class object with a Constructor Function.....
-- Rewrite the Tamagotchi object with a constructor function!
-- Create several tamagotchi objects using your constructor :D
