@@ -5,7 +5,7 @@ For those who don't remember (or choose to forget), tamagotchis were "digital pe
 
 ## Before you start!!
 
-- Open up `src/tamagotchi.js`. This is where you'll be doing your work.
+- You'll be saving your work in your `src/tamagotchi.js`. However, feel free to code your work in a `repl.it` or `codepen` and then transfer your work to your `src/tamagotchi.js` upon completion. 
 
 # Tamagotchi Version 1.0
 
