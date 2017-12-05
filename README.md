@@ -31,16 +31,27 @@ Use your custom tamagotchi object... to create each of these
 - fish
 
 
-### dog should be the same as tamagotchi except it should also have these abilities:
-1. ```bark()``` - returns "ruff ruff  
-2. ```goOutside()``` - returns "I own that tree now!"  
+### dog should be the same as tamagotchi except it should have this additional property:
+-  a `breed` property (set this this to a breed of your choice)  
 
-### cat should be the same as tamagotchi except it should also have these abilities:
-1. ```meow()``` - returns "Meow!"  
-2. ```useLitterBox()``` - returns "Burried treasure!"  
+#### and also have these functions:
+-  ```bark()``` - returns "ruff ruff  
+-  ```goOutside()``` - returns "I own that tree now!"  
 
-### fish should be the same as tamagotchi except it should also have these abilities:
-1. ```swim()``` - returns "Just keep swimming..."  
+
+### cat should be the same as tamagotchi except it should have this additional property:
+-  a `furry` property (initially `true`)  
+
+#### and also have these functions:
+-  ```meow()``` - returns "Meow!"  
+-  ```useLitterBox()``` - returns "Burried treasure!"  
+
+### fish should be the same as tamagotchi except it should have this additional property:
+-  a `fishType` property (initially set to `salmon`)  
+-  a `kosher` property (initially `true`)  
+
+#### and also have these functions:
+-  ```swim()``` - returns "Just keep swimming..."  
 
 ---
 
