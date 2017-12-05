@@ -1,4 +1,6 @@
-![tamagotchi](./assets/tama.jpg)
+![tama](https://user-images.githubusercontent.com/6153182/33615434-2359d308-d9a8-11e7-9ac8-492bbfacd749.jpg)
+
+
 For those who don't remember (or choose to forget), tamagotchis were "digital pets" that you could carry around with you and feed them, clean up after them, pet them, and try to keep them happy.
 
 ## Before you start!!
