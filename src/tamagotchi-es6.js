@@ -1,28 +1,34 @@
-const cat = {
-  hungry: false,
-  sick: false,
-  age: 0,
-  restLevel: 5,
+class Animal {
+  constructor (hungry = false, sick = false, age = 0, restLevel = 5) {
+    this.hungry = hungry;
+    this.sick = sick;
+    this.age = age;
+    this.restLevel = restLevel;
+  }
 
-  feed: function() {
-    if (this.hungry === true) {
-      return 'That was yummy!';
+  feed() {
+    if (this.needRest() === false) {
+      if (this.hungry === true) {
+        return 'That was yummy!';
+      } else {
+        this.hungry = true;
+        return 'No thanks, I\'m full';
+      }
     } else {
-      this.hungry = true;
-      return 'No thanks, I\'m full';
+      return this.sleep();
     }
-  },
+  }
 
-  sleep: function() {
+  sleep() {
     if (this.restLevel < 1) {
       this.restLevel = 5;
-      return 'Goodnight...';
+      return `I'm too sleepy. Goodnight...`;
     } else {
       return `I'm not sleepy yet...`;
     }
-  },
+  }
 
-  medicate: function() {
+  medicate() {
     if (this.sick === true) {
       this.sick = false;
       return 'I feel much better!';
@@ -30,145 +36,128 @@ const cat = {
       this.sick = true;
       return 'No thanks, I feel fine';
     }
-  },
+  }
 
-  increaseAge: function() {
+  increaseAge() {
     this.age += 1;
     return `Happy Birthday to me! I am ${this.age} years old!`;
-  },
+  }
+
+  needRest() {
+    if (this.restLevel >= 1) {
+      this.restLevel -= 1;
+      return false;
+    }
+  }
+}
+
+class Cat extends Animal {
+  constructor(hungry, sick, age, restLevel, feed, sleep, medicate, increaseAge, needRest, furry = true) {
+    super(hungry, sick, age, restLevel, feed, sleep, medicate, increaseAge, needRest);
+    this.furry = furry;
+  }
 
   // Cat Specific Methods
-  meow: function() {
-    return 'Meow!';
-  },
-
-  useLitterBox: function() {
-    return 'Buried Treasure!';
+  meow() {
+    if (this.needRest() === false) {
+      return 'Meow!';
+    } else {
+      return this.sleep();
+    }
   }
-};
 
-const dog = {
-  hungry: false,
-  sick: false,
-  age: 0,
-  restLevel: 5,
-
-  feed: function() {
-    if (this.hungry === true) {
-      return 'That was yummy!';
+  useLitterBox() {
+    if (this.needRest() === false) {
+      return 'Buried Treasure!';
     } else {
-      this.hungry = true;
-      return 'No thanks, I\'m full';
+      return this.sleep();
     }
-  },
+  }
+}
 
-  sleep: function() {
-    if (this.restLevel < 1) {
-      this.restLevel = 5;
-      return 'Goodnight...';
-    } else {
-      return `I'm not sleepy yet...`;
-    }
-  },
-
-  medicate: function() {
-    if (this.sick === true) {
-      this.sick = false;
-      return 'I feel much better!';
-    } else {
-      this.sick = true;
-      return 'No thanks, I feel fine';
-    }
-  },
-
-  increaseAge: function() {
-    this.age += 1;
-    return `Happy Birthday to me! I am ${this.age} years old!`;
-  },
+class Dog extends Animal {
+  constructor(hungry, sick, age, restLevel, feed, sleep, medicate, increaseAge, needRest, breed = 'Collie') {
+    super(hungry, sick, age, restLevel, feed, sleep, medicate, increaseAge, needRest);
+    this.breed = breed;
+  }
 
   // Dog Specific Methods
-  bark: function() {
-    return 'ruff ruff';
-  },
-
-  goOutside: function() {
-    return 'I own that tree now!';
-  },
-};
-
-const fish = {
-  hungry: false,
-  sick: false,
-  age: 0,
-  restLevel: 5,
-
-  feed: function() {
-    if (this.hungry === true) {
-      return 'That was yummy!';
+  bark() {
+    if (this.needRest() === false) {
+      return 'ruff ruff';
     } else {
-      this.hungry = true;
-      return 'No thanks, I\'m full';
+      return this.sleep();
     }
-  },
+  }
 
-  sleep: function() {
-    if (this.restLevel < 1) {
-      this.restLevel = 5;
-      return 'Goodnight...';
+  goOutside() {
+    if (this.needRest() === false) {
+      return 'I own that tree now!';
     } else {
-      return `I'm not sleepy yet...`;
+      return this.sleep();
     }
-  },
+  }
+}
 
-  medicate: function() {
-    if (this.sick === true) {
-      this.sick = false;
-      return 'I feel much better!';
-    } else {
-      this.sick = true;
-      return 'No thanks, I feel fine';
-    }
-  },
-
-  increaseAge: function() {
-    this.age += 1;
-    return `Happy Birthday to me! I am ${this.age} years old!`;
-  },
+class Fish extends Animal {
+  constructor(hungry, sick, age, restLevel, feed, sleep, medicate, increaseAge, needRest, fishType = 'Salmon', kosher = true) {
+    super(hungry, sick, age, restLevel, feed, sleep, medicate, increaseAge, needRest);
+    this.fishType = fishType;
+    this.kosher = kosher;
+  }
 
   // Fish Specific Methods
-  swim: function() {
-    return 'Just keep swimming!';
+  swim() {
+    if (this.needRest() === false) {
+      return 'Just keep swimming...';
+    } else {
+      return this.sleep();
+    }
   }
-};
+}
+
+const cat = new Cat();
+const dog = new Dog();
+const fish = new Fish();
 
 /* Feed the dog twice */
 console.log(dog.feed());
 console.log(dog.feed());
 
-/* Increase the dog's age twice */
+// /* Increase the dog's age twice */
 console.log(dog.increaseAge());
 console.log(dog.increaseAge());
 
-/* Make the dog bark */
+// /* Make the dog bark */
+console.log(dog.bark());
+console.log(dog.bark());
+console.log(dog.bark());
+console.log(dog.bark());
 console.log(dog.bark());
 
-/* Make the dog go outside */
+// /* Make the dog go outside */
 console.log(dog.goOutside());
 
-/* Make the cat meow */
+// /* Make the cat meow */
 console.log(cat.meow());
 
-/* Make the cat sleep */
+// /* Make the cat sleep */
 console.log(cat.sleep());
 
-/* Make the cat use the litter box */
+// /* Make the cat use the litter box */
 console.log(cat.useLitterBox());
 
-/* Give the fish medicine twice */
+// /* Give the fish medicine twice */
 console.log(fish.medicate());
 console.log(fish.medicate());
 
-/* Make the fish swim */
+// /* Make the fish swim */
+console.log(fish.swim());
+console.log(fish.swim());
+console.log(fish.swim());
+console.log(fish.swim());
+console.log(fish.swim());
+console.log(fish.swim());
 console.log(fish.swim());
 
 /* Instructions
